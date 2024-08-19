@@ -10,4 +10,14 @@ html, body {
 * {
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
-  }
+}
+
+.flex {
+    display: flex;
+
+    //centralizando item na página.
+    &-center {
+        justify-content: center;
+        align-items: center;
+    }
+}
