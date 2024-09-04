@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginModule } from './login.module';
 import { SportifyService } from '../../services/sportify.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,8 @@ import { SportifyService } from '../../services/sportify.service';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private readonly sportifyService: SportifyService
+    private readonly sportifyService: SportifyService,
+    private readonly router: Router
   ){}
 
   public ngOnInit(): void {
@@ -26,6 +28,7 @@ export class LoginComponent implements OnInit {
     const token = this.sportifyService.obterTokenUrlCallback();
     if(!!token){
       this.sportifyService.definirAccessToken(token);
+      this.router.navigate(['/player']);
     }
   }
 
