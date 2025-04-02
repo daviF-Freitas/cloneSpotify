@@ -1,6 +1,8 @@
 @import 'variable.scss';
 
 $h-spotify-logo: 120px;
+$h-menu-option: 150px;
+$h-entry-menus: 10px;
 
 :host {
     max-width: 300px;
@@ -19,11 +21,24 @@ $h-spotify-logo: 120px;
 
         .image-container {
             min-height: $h-spotify-logo;
-        
+
             img {
                 width: 70%;
             }
-        
+
+        }
+
+        .menu-container {
+          width: 100%;
+
+          &.options {
+            min-height: $h-menu-option;
+            flex-direction: column;
+
+            * {
+              margin-bottom: $h-entry-menus
+            }
+          }
         }
     }
 }
